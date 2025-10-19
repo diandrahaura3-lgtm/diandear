@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ucapan Ulang Tahun Retro 🎶</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+    body {
+      font-family: 'Press Start 2P', cursive;
+      background: radial-gradient(circle at center, #001f3f, #0a0a0a);
+      color: #f5deb3;
+      text-align: center;
+      padding: 30px;
+      overflow-x: hidden;
+    }
+
+    h1 {
+      color: #ffcc33;
+      text-shadow: 0 0 10px #ffcc33, 0 0 20px #ff9900;
+      font-size: 2em;
+      animation: blink 1s infinite alternate;
+    }
+
+    @keyframes blink {
+      from { opacity: 1; }
+      to { opacity: 0.7; }
+    }
+
+    .card {
+      background: #2f2f2f;
+      border: 3px solid #8b4513;
+      border-radius: 20px;
+      box-shadow: 0 0 20px #000;
+      padding: 20px;
+      max-width: 420px;
+      margin: 30px auto;
+    }
+
+    img {
+      width: 100%;
+      border-radius: 15px;
+      border: 3px solid #8b4513;
+    }
+
+    .message {
+      margin-top: 15px;
+      font-size: 0.8em;
+      color: #ffcc99;
+      line-height: 1.6;
+    }
+
+    button {
+      background: #8b4513;
+      border: none;
+      color: #f5deb3;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-family: 'Press Start 2P', cursive;
+      cursor: pointer;
+      margin: 10px;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #ffcc33;
+      color: #000;
+      transform: scale(1.1);
+    }
+
+    audio {
+      margin-top: 10px;
+      width: 80%;
+    }
+
+    .tape {
+      font-size: 0.8em;
+      color: #888;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎵 Happy Birthday boss 🎶</h1>
+
+  <div class="card">
+    <h2 id="nama">[elennn]</h2>
+    <p class="message" id="pesan">
+      Yooo! Selamat ulang tahun, lenn! Semoga banyak hal hal baik datang di tahun ini yaww, dan semoga impian mu tercapai satu persatu, tetep semangatt masio aku ndelok kuliah mu abott bangett wkwkkwk, semoga bisa ketemu di waktu yang baik, see you len, SEKALI LAGIIII SELAMAT ULANGG TAHUNN DANN SEHATT SELALUUU😎
+    </p>
+
+    <button onclick="mainkanMusik()">🎧 Putar Musik</button>
+    <button onclick="lemparKonfeti()">✨ Party Time!</button>
+
+    <audio id="musik" src="musik_retro.mp3"></audio>
+
+    <p class="tape">💿 Retro Cassette Mode – 90s Edition</p>
+  </div>
+
+  <script>
+    // 🔧 Ganti isi ucapan, nama, dan foto di sini
+    document.getElementById("nama").innerText = "ELENN";
+    document.getElementById("pesan").innerText =
+      "Semogaaa ulangg tahun mu berkesann yahh 💿💃✨";
+
+    // 🔊 Fungsi musik
+    function mainkanMusik() {
+      const musik = document.getElementById("musik");
+      musik.volume = 0.6;
+      musik.play();
+      alert("🎶 Let's groove! Musik retro dimulai...");
+    }
+
+    // 🎉 Efek konfeti warna retro
+    function lemparKonfeti() {
+      for (let i = 0; i < 25; i++) {
+        let confetti = document.createElement("div");
+        confetti.style.position = "fixed";
+        confetti.style.width = "10px";
+        confetti.style.height = "10px";
+        confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 80%, 50%)`;
+        confetti.style.top = "-10px";
+        confetti.style.left = Math.random() * 100 + "vw";
+        confetti.style.animation = "jatuh 3s linear forwards";
+        confetti.style.borderRadius = "50%";
+        document.body.appendChild(confetti);
+        setTimeout(() => confetti.remove(), 4000);
+      }
+    }
+
+    // 🎨 Animasi jatuh konfeti
+    const style = document.createElement("style");
+    style.innerHTML = `
+      @keyframes jatuh {
+        0% { transform: translateY(0); opacity: 1; }
+        100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+      }
+    `;
+    document.head.appendChild(style);
+  </script>
+</body>
+</html>
